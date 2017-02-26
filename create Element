@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<style>
+		.red{
+			color: red;
+		}
+	</style>
+	<body>
+			<div id="demo">
+			</div>
+		</div>
+	</body>
+	<script>
+	//数据
+		var data = {
+			'addClass' : true
+		}
+		var vm = new Vue({
+			el : '#demo',
+			render(createElement){
+				return createElement(
+					"ul",{
+						class:'red',
+						style : {
+							fontSize : '50px'
+						},
+						attrs: {
+							abc : 'miaov'
+						}
+					},
+					[
+						createElement('li',1),
+						createElement('li',2),
+						createElement('li',3)
+					]
+				)
+			}
+		})
+	</script>
+</html>
