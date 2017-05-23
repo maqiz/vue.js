@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app" v-bind:titie="message" v-if="seed">
+			<p v-on:click="reverseMessage" >{{message}}</p>
+			<p v-for="todo in todos">
+				{{ todo.text }}
+			</p>
+			<input type="text" v-model="message"  />
+		</div>
+		<script>
+		var app = new Vue({
+			el:'#app',
+			data: {
+				message: "Hello Vue!",
+				seed:true,
+				todos:[ 
+					{ text: '学习 JavaScript' },
+			     	{ text: '学习 Vue' },
+			     	{ text: '整个牛项目' }
+			      ]
+			},
+			methods:{
+				reverseMessage:function(){
+					this.message = this.message.split('').reverse().join('');
+				}
+			}
+		})
+		</script>
+	</body>
+</html>
